@@ -1,3 +1,5 @@
+const Books = require('../models/Books')
+
 
 // @desc    Get all books
 // @route   GET /api/v1/books
@@ -11,6 +13,7 @@ exports.getBooks=(req,res,next)=>{
 exports.addBooks=(req,res,next)=>{
     res.status(200).json({ sucess: true, msg: 'Add books' });
 }
+
 // @desc    Delete a single book
 // @route   DELETE /api/v1/books/:id
 // @access  public

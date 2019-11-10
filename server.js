@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const colors = require('colors')
 const connectDB = require('./config/db');
 
 //Route files
@@ -32,7 +33,7 @@ const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => res.json({ msg: 'Welcome to my Book Search' }));
 
 app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+  console.log(`Server listening on ${PORT}`.yellow.bold);
 });
 
 // Handle unhandled promise rejections
