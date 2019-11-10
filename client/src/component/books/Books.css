@@ -48,4 +48,27 @@
     font-size:1.3rem;
 }
 
+.saveBtn{
+    background: var(--light-color);
+    color:var(--dark-color);
+    font-weight: bold;
+    padding: 0.75rem 0;
+    box-shadow: 0px 5px 10px whitesmoke;
+    transition: all 1s ease;
+    border-radius: 5px;
+}
 
+.saveBtn:hover{
+    transform: scale(0.9);
+    background: rgba(85, 27, 27, 0.938);
+    color: var(--light-color);
+    box-shadow: 0px 2.5px 5px rgba(85, 27, 27, 0.938);
+}
+.saveBtn:active{
+    transform: scale(0.88);
+    box-shadow: none;
+}
+
+.card .left-side ul li{
+    margin: 1rem 0;
+}

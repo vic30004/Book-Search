@@ -17,7 +17,7 @@ const Books = () => {
     >
       <div className='books-container'>
         {books.length > 1 ? (
-          books.map((data, i) => <BooksItems key={i} books={data.volumeInfo} />)
+          books.map((data, i) =>( <BooksItems key={i} books={data.volumeInfo} />))
         ) : (
           <h2 className='book-placeHolder'>
             “A room without books is like a body without a soul.” ― Marcus

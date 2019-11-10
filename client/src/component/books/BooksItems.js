@@ -18,13 +18,13 @@ const saveBook = (e)=>{
 
 }
   
- console.log(books.imageLinks)
 
   return (
     <Fragment>
-        <div className='card'>
+    {books ? 
+      <div className='card'>
           <div className='left-side'>
-            <img src={books.imageLinks.thumbnail} alt='Book' />
+            <img src={books.imageLinks ? books.imageLinks.smallThumbnail : "#"} alt='Book' />
             {books.authors.map(author => (
               <ul>
                 <li>{author}</li>
@@ -42,6 +42,9 @@ const saveBook = (e)=>{
           </div>
    
         </div>
+      
+      :''}
+        
 
   
     </Fragment>

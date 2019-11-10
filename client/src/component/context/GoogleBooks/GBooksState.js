@@ -8,16 +8,23 @@ const GBooksState = props => {
     const initialState={
         books:[]
     }
+    let googleClientSecret
+
+    if(process.env.NODE_ENV !== 'production'){
+        googleClientSecret = process.env.REACT_APP_GOOGLE_KEY
+    }else{
+        googleClientSecret = process.env.GOOGLE_KEY
+    }
     
     const [state,dispatch] = useReducer(GBooksReducer, initialState);
 
 
     // Search Books
     const searchBooks =async (query) =>{
-        const URL=`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.KEY}`;
+        const URL=`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${googleClientSecret}`;
         const res = await fetch(URL);
         const data = await res.json();
-        dispatch({
+        return dispatch({
         type: SEARCH_BOOKS,
         payload: data.items
         })
