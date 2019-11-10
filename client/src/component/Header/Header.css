@@ -1,0 +1,68 @@
+#head{
+width: 100%;
+height:50vh;
+background: url('./BoxModel.JPG') no-repeat center center/cover ;
+position:relative;
+z-index: 1;
+}
+
+#head:before{
+    position: absolute;
+    content:'';
+    top:0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+}
+
+#head .head-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+
+#head .head-container h1{
+    color:papayawhip;
+    font-size:3rem;
+}
+
+#head .head-container input{
+    width: 50%;
+    padding:0.3rem 1rem;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    font-family: var(--main-font);
+    font-size:1.2rem;
+}
+
+#head .head-container .btncontainer{
+    margin: 2rem 0rem;
+}
+#head .head-container .btncontainer a{
+    margin: 0 1rem;
+}
+
+#head .head-container .searchBtn{
+    margin: 1rem 0;
+    background: var(--dark-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px var(--dark-color);
+    color:papayawhip;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+#head .head-container .searchBtn:hover{
+    transform: scale(0.9);
+    box-shadow: 0 2.5px 5px var(--dark-color);
+}
+#head .head-container .searchBtn:active{
+    transform: scale(0.87);
+    box-shadow: none;
+}
