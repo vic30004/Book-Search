@@ -7,7 +7,7 @@ router.route('/')
 .get(getBooks)
 .post(addBooks)
 
-
+router.route('/:id')
 .delete(deleteBook)
 
 module.exports = router;

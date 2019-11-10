@@ -4,8 +4,14 @@ const morgan = require('morgan');
 const colors = require('colors')
 const connectDB = require('./config/db');
 
+//initialize express
+const app = express();
+
 //Route files
 const books = require('./routes/books');
+
+// Body Parser
+app.use(express.json());
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -13,8 +19,7 @@ dotenv.config({ path: './config/config.env' });
 // coonect to db
 connectDB();
 
-//initialize express
-const app = express();
+
 
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
