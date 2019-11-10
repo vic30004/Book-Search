@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './App.css'
 import Nav from './component/Nav/Nav';
-import Header from './component/Header/Header'
+import Header from './component/Header/Header';
+import Books from './component/books/Books'
+import GBooksState from './component/context/GoogleBooks/GBooksState'
 
 export class App extends Component {
   render() {
     return (
-      <div>
+      <GBooksState>
         <Nav/>
         <Header/>
-      </div>
+        <Books/>
+      </GBooksState>
     )
   }
 }
