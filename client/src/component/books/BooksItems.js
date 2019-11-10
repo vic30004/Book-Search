@@ -1,7 +1,25 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useContext} from 'react';
 import './Books.css';
+import SBooksContext from '../context/SavedBooks/SBooksContext';
+import {Link} from 'react-router-dom'
 
 const BooksItems = ({ books }) => {
+  const sbooksContext = useContext(SBooksContext);
+  const {addBook} = sbooksContext;
+const saveBook = (e)=>{
+  window.location.reload()
+  addBook({
+    title:books.title,
+    image: books.imageLinks.thumbnail,
+    authors: books.authors,
+    link: books.previewLink,
+    description: books.description
+  })
+
+}
+  
+ console.log(books.imageLinks)
+
   return (
     <Fragment>
         <div className='card'>
@@ -13,9 +31,9 @@ const BooksItems = ({ books }) => {
               </ul>
               
             ))}
-                <a href='#' className='saveBtn'>
+                <Link to='/' className='saveBtn' onClick={saveBook}>
         Save Book
-      </a>
+      </Link>
           </div>
           <div className="right-side">
                  <h2>{books.title}</h2>

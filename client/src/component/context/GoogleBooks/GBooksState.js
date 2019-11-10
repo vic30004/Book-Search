@@ -14,7 +14,7 @@ const GBooksState = props => {
 
     // Search Books
     const searchBooks =async (query) =>{
-        const URL=`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.REACT_APP_GOOGLE_KEY}`;
+        const URL=`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.KEY}`;
         const res = await fetch(URL);
         const data = await res.json();
         dispatch({
